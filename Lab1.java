@@ -1,15 +1,12 @@
 /*
-**************************************************
-    JAV1001-Lab1 - Variables and Logic
-    JAV-1001 App Development for Android
-    Submitted by Sooraj Mohan (ID: A00247480)
-**************************************************
+***************************************************************
+      JAV-1001 App Development for Android
+      JAV1001-Lab1 - Variables and Logic
+      Submitted by Sooraj Mohan (Student ID: A00247480)
+***************************************************************
 */
 
-
-
 import java.util.Scanner;
-
 
 public class Lab1
 {
@@ -23,10 +20,12 @@ public class Lab1
     Scanner entry = new Scanner(System.in);
 
     // App welcome message
-    System.out.println("------------------------- UNIT CONVERSION APP -------------------------");   // Application opening message
-    System.out.println("Possible conversions: km<->mi, cm<->IN, KG<->lb, G<->oz, C<->F<->K, L<->cups");
+    System.out.println("-----------------------------------------------------------------------------");
+    System.out.println("                             UNIT CONVERSION APP                             ");
+    System.out.println("Possible conversions: KM<->mi, cm<->IN, KG<->lb, G<->oz, C<->F<->K, L<->cups");
+    System.out.println("-----------------------------------------------------------------------------");
 
-    // Fetching User I/P and UoM
+    // Fetching User I/P for value and UoM
 
     do {
       System.out.print("Enter a value to convert: ");
@@ -46,66 +45,66 @@ public class Lab1
       {
         case "km":                              //Convert from KM to mi
           valOut = 0.62f * valIn;
-          System.out.println(valIn + " KM is equal to " + valOut + "mi");
+          System.out.println(valIn + " KM is equal to " + valOut + " mi");
           break;
         case "mi":                              //Convert from mi to KM
           valOut = 1.61f * valIn;
-          System.out.println(valIn + " mi is equal to " + valOut + "KM");
+          System.out.println(valIn + " mi is equal to " + valOut + " KM");
           break;
 
         case "cm":                              //Convert from cm to IN
           valOut = 0.39f * valIn;
-          System.out.println(valIn + " cm is equal to " + valOut + "IN");
+          System.out.println(valIn + " cm is equal to " + valOut + " IN");
           break;
         case "in":                               //Convert from IN to cm
           valOut = 2.54f * valIn;
-          System.out.println(valIn + " IN is equal to " + valOut + "cm");
+          System.out.println(valIn + " IN is equal to " + valOut + " cm");
           break;
 
         case "kg":                               //Convert from KG to lb
           valOut = 2.2f * valIn;
-          System.out.println(valIn + " KG is equal to " + valOut + "lb");
+          System.out.println(valIn + " KG is equal to " + valOut + " lb");
           break;
         case "lb":                               //Convert from lb to KG
           valOut = 0.45f * valIn;
-          System.out.println(valIn + " lb is equal to " + valOut + "KG");
+          System.out.println(valIn + " lb is equal to " + valOut + " KG");
           break;
 
         case "g":                                //Convert from G to oz
           valOut = 0.04f * valIn;
-          System.out.println(valIn + " G is equal to " + valOut + "oz");
+          System.out.println(valIn + " G is equal to " + valOut + " oz");
           break;
         case "oz":                              //Convert from oz to G
           valOut = 28.35f * valIn;
-          System.out.println(valIn + " oz is equal to " + valOut + "G");
+          System.out.println(valIn + " oz is equal to " + valOut + " G");
           break;
 
         case "l":                               //Convert from L to cups
           valOut = 4.17f * valIn;
-          System.out.println(valIn + " L is equal to " + valOut + "cup(s)");
+          System.out.println(valIn + " L is equal to " + valOut + " cup(s)");
           break;
         case "cups":                            //Convert from cups to L
           valOut = 0.24f * valIn;
-          System.out.println(valIn + " cup(s) is equal to " + valOut + "L");
+          System.out.println(valIn + " cup(s) is equal to " + valOut + " L");
           break;
 
         case "c":                               //Convert from C to F and K
           valOut = (valIn * 9 / 5) + 32;
-          System.out.println(valIn + " °C is equal to " + valOut + "°F");
+          System.out.println(valIn + " °C is equal to " + valOut + " °F");
           valOut = valIn + 273.15f;
-          System.out.println(valIn + " °C is equal to " + valOut + "K");
+          System.out.println(valIn + " °C is equal to " + valOut + " K");
           break;
         case "f":                               //Convert from F to C and K
           valOut = (valIn - 32) * 5 / 9;
-          System.out.println(valIn + " °F is equal to " + valOut + "°C");
+          System.out.println(valIn + " °F is equal to " + valOut + " °C");
           valOut = (valIn - 32) * 5 / 9 + 273.15f;
-          System.out.println(valIn + " °F is equal to " + valOut + "K");
+          System.out.println(valIn + " °F is equal to " + valOut + " K");
           break;
         case "k":                               //Convert from K to C and F
           valOut = valIn - 273.15f;
-          System.out.println(valIn + " K is equal to " + valOut + "°C");
+          System.out.println(valIn + " K is equal to " + valOut + " °C");
           valOut = (valIn - 273.15f) * 9 / 5 + 32;
-          System.out.println(valIn + " K is equal to " + valOut + "°F");
+          System.out.println(valIn + " K is equal to " + valOut + " °F");
           break;
         default:                                //Fallback for invalid conversions
           System.out.println("Invalid Unit of Measure, Possible conversions are: KM<->mi, cm<->IN, KG<->lb, G<->oz, C<->F<->K, L<->cups");
@@ -119,12 +118,12 @@ public class Lab1
       entry.nextLine();
       if (optRerun != 'Y' && optRerun != 'N')                             //Fallback for invalid entry
       {
-        System.out.print("Invalid Input - Kindly enter Y/N to proceed or application will close : ");    // code can handle first instance of invalid entry, if invalid entry entered again the application terminates
+        System.out.print("Invalid Input - Kindly enter Y/N to proceed or application will close: ");    // code can handle first instance of invalid entry, if invalid entry entered again the application terminates
         userOpt = entry.next();
         optRerun = userOpt.charAt(0);
         entry.nextLine();
       }
     } while (optRerun == 'Y');                       //Loop back
-    System.out.println("Thank you. Application will close now.");        //Application close message
+    System.out.println("********Thank you. Application will close now.*********");        //Application closing message
   }
 }
